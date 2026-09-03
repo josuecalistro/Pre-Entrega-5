@@ -1,15 +1,391 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pre-Entrega 5 - Objetos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sport Shop Online</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h1>Sport Shop Online</h1>
-  <p>Simulador de productos deportivos</p>
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-  <script src="main.js"></script>
+    <header class="header">
+
+        <div class="logo">
+            <span class="logo-icon">⚽</span>
+
+            <div>
+                <h1>SPORT SHOP</h1>
+                <p>Pasión por el fútbol</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+        </nav>
+
+        <button id="botonCarrito" class="boton-carrito">
+
+            🛒
+
+            <span id="contadorCarrito">
+                0
+            </span>
+
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section id="inicio" class="hero">
+
+        <div class="hero-contenido">
+
+            <span class="etiqueta">
+                NUEVA TEMPORADA
+            </span>
+
+            <h2>
+                Vestí los colores
+                <span>de tu pasión.</span>
+            </h2>
+
+            <p>
+                Encontrá camisetas de algunos de los clubes
+                más grandes del fútbol argentino.
+            </p>
+
+            <a href="#productos" class="boton-principal">
+                Ver productos
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BENEFICIOS
+    ========================== -->
+
+    <section class="beneficios">
+
+        <div class="beneficio">
+            <span>🚚</span>
+
+            <div>
+                <h3>Envíos a todo el país</h3>
+                <p>Recibí tu compra donde quieras.</p>
+            </div>
+        </div>
+
+
+        <div class="beneficio">
+            <span>💳</span>
+
+            <div>
+                <h3>Medios de pago</h3>
+                <p>Comprá de forma fácil y segura.</p>
+            </div>
+        </div>
+
+
+        <div class="beneficio">
+            <span>🔒</span>
+
+            <div>
+                <h3>Compra segura</h3>
+                <p>Protegemos tus datos.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUCTOS
+    ========================== -->
+
+    <main>
+
+        <section id="productos" class="seccion-productos">
+
+            <div class="titulo-seccion">
+
+                <span>NUESTRA COLECCIÓN</span>
+
+                <h2>Camisetas destacadas</h2>
+
+                <p>
+                    Elegí tu equipo y agregá tus productos
+                    favoritos al carrito.
+                </p>
+
+            </div>
+
+
+            <!-- BUSCADOR Y FILTRO -->
+
+            <div class="filtros">
+
+                <input
+                    type="text"
+                    id="buscador"
+                    placeholder="🔎 Buscar camiseta..."
+                >
+
+
+                <select id="filtroEquipo">
+
+                    <option value="Todos">
+                        Todos los equipos
+                    </option>
+
+                    <option value="Boca">
+                        Boca Juniors
+                    </option>
+
+                    <option value="River">
+                        River Plate
+                    </option>
+
+                    <option value="Racing">
+                        Racing Club
+                    </option>
+
+                    <option value="Independiente">
+                        Independiente
+                    </option>
+
+                    <option value="San Lorenzo">
+                        San Lorenzo
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- JAVASCRIPT CREA LAS TARJETAS ACÁ -->
+
+            <div
+                id="contenedorProductos"
+                class="contenedor-productos"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NOSOTROS
+        ========================== -->
+
+        <section id="nosotros" class="nosotros">
+
+            <div>
+
+                <span>SPORT SHOP ONLINE</span>
+
+                <h2>
+                    Fútbol, pasión y estilo.
+                </h2>
+
+                <p>
+                    Sport Shop Online es un simulador de
+                    e-commerce desarrollado como proyecto
+                    de JavaScript.
+                </p>
+
+                <p>
+                    La aplicación utiliza objetos, clases,
+                    arrays, ciclos, funciones y almacenamiento
+                    local para administrar los productos
+                    y el carrito de compras.
+                </p>
+
+            </div>
+
+
+            <div class="estadisticas">
+
+                <div>
+                    <strong>5+</strong>
+                    <span>Equipos</span>
+                </div>
+
+                <div>
+                    <strong>100%</strong>
+                    <span>Pasión</span>
+                </div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>Online</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         CARRITO
+    ========================== -->
+
+    <div
+        id="fondoCarrito"
+        class="fondo-carrito"
+    ></div>
+
+
+    <aside
+        id="carrito"
+        class="carrito"
+    >
+
+        <div class="carrito-header">
+
+            <div>
+
+                <span>MI COMPRA</span>
+
+                <h2>Carrito</h2>
+
+            </div>
+
+            <button id="cerrarCarrito">
+                ✕
+            </button>
+
+        </div>
+
+
+        <div
+            id="productosCarrito"
+            class="productos-carrito"
+        >
+        </div>
+
+
+        <div class="carrito-footer">
+
+            <div class="total-carrito">
+
+                <span>Total</span>
+
+                <strong id="totalCarrito">
+                    $0
+                </strong>
+
+            </div>
+
+
+            <button
+                id="botonComprar"
+                class="boton-comprar"
+            >
+                Finalizar compra
+            </button>
+
+
+            <button
+                id="botonVaciar"
+                class="boton-vaciar"
+            >
+                Vaciar carrito
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MENSAJE
+    ========================== -->
+
+    <div
+        id="mensaje"
+        class="mensaje"
+    >
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <h2>⚽ SPORT SHOP</h2>
+
+            <p>
+                Tu pasión. Tus colores.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Navegación</h3>
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+            <a href="#productos">
+                Productos
+            </a>
+
+            <a href="#nosotros">
+                Nosotros
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contacto</h3>
+
+            <p>Buenos Aires, Argentina</p>
+
+            <p>sportshop@email.com</p>
+
+        </div>
+
+    </footer>
+
+
+    <div class="copyright">
+
+        © 2026 Sport Shop Online -
+        Proyecto JavaScript
+
+    </div>
+
+
+    <script src="main.js"></script>
+
 </body>
+
 </html>
